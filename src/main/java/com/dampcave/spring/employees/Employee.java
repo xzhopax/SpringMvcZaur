@@ -1,6 +1,8 @@
 package com.dampcave.spring.employees;
 
 
+import com.dampcave.spring.validation.CheckEmail;
+
 import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +19,7 @@ public class Employee {
     private int salary;
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX")
     private String phoneNumber;
+    @CheckEmail(value = "gmail.com",message = "email must end with gmail.com")
     private String email;
     private String department;
     private Map<String, String> departments;
